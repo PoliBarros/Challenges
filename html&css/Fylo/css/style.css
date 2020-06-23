@@ -59,7 +59,7 @@ section {
 }
 
 .article-right {
-    width: 30%;
+    width: 35%;
     background-color: var(--bg-colot-secondary);
     padding: 40px;
     margin-left: 15px;
@@ -78,5 +78,6 @@ span {
     height: 15px;
     width: 100%;
     background-color: var(--bg-color-primary);
-    border-radius: 40%;
+    margin-top: 10px;
+    border-radius: 40px;
 }
