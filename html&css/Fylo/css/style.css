@@ -11,6 +11,7 @@
 
 body {
     background-color: var(--bg-color-primary);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     height: 100vh;
 }
 
@@ -65,19 +66,111 @@ section {
     margin-left: 15px;
     border-radius: 10px;
     color: #b9b5b5;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 12px;
+    font-size: 0.8rem;
 }
 
-span {
+.article-right span {
     color: #fff;
     font-weight: bold;
 }
 
 .loader-box {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 2px;
     height: 15px;
     width: 100%;
     background-color: var(--bg-color-primary);
-    margin-top: 10px;
+    margin: 15px 0 10px 0;
     border-radius: 40px;
+}
+
+.loader {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 13px;
+    width: 5%;
+    background-color: pink;
+    border-radius: 40px;
+    animation: loader 2s forwards ease;
+    transition-delay: 2s;
+}
+
+.dot {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 2px;
+    position: relative;
+    left: 0;
+    animation: loader-dot 2s forwards ease;
+}
+
+.values {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.tooltip-box {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    position: absolute;
+    top: 34%;
+    right: 22%;
+}
+
+.tooltip {
+    padding: 3%;
+    background-color: #fff;
+    border-radius: 10px 10px 0 10px;
+}
+
+.tooltip p {
+    font-size: 1.5rem;
+    color: #272727;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.tooltip span {
+    font-size: 0.7rem;
+    color: #a5a2a2;
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+
+.tooltip-arrow {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid white;
+    transform: rotate(-45deg);
+    position: relative;
+    bottom: 21px;
+    left: 3px;
+}
+
+@keyframes loader {
+    to {
+        background: linear-gradient(90deg, rgb(241, 190, 190) 0%, rgba(246, 174, 220, 1) 31%, rgba(240, 105, 217, 1) 70%, rgba(252, 86, 163, 1) 100%);
+        width: 80%;
+    }
+}
+
+@keyframes loader-dot {
+    100% {
+        left: 95%;
+    }
 }
