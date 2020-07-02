@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -11,12 +12,12 @@
 
 body {
     background-color: var(--bg-color-primary);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Raleway', sans-serif;
     height: 100vh;
 }
 
 main {
-    background: url("../img/bg-desktop.svg") no-repeat bottom center/contain;
+    background: url("../img/bg-desktop.svg") center bottom /contain no-repeat;
     height: 100%;
     display: flex;
     align-items: center;
@@ -34,21 +35,21 @@ section {
 .article-left {
     display: flex;
     flex-direction: column;
-    width: 26%;
+    width: 350px;
     background-color: var(--bg-colot-secondary);
-    padding: 40px;
+    padding: 35px;
     border-radius: 10px 100px 10px 10px;
     margin-right: 15px;
 }
 
 .logo {
-    width: 52%;
-    margin-bottom: 35px;
+    width: 120px;
+    margin-bottom: 30px;
 }
 
 .icons {
     display: flex;
-    width: 70%;
+    width: 160px;
     justify-content: space-between;
 }
 
@@ -63,31 +64,27 @@ section {
     background-color: var(--bg-color-primary);
 }
 
-.box img {
-    width: 90%;
-}
-
 .article-right {
-    width: 35%;
+    width: 470px;
     background-color: var(--bg-colot-secondary);
     padding: 40px;
     margin-left: 15px;
     border-radius: 10px;
-    color: #b9b5b5;
+    color: hsl(243, 100%, 93%);
     font-size: 0.8rem;
 }
 
 .article-right span {
-    color: #fff;
-    font-weight: bold;
+    color: hsl(243, 100%, 93%);
+    font-weight: 700;
 }
 
 .loader-box {
     display: flex;
     align-items: center;
     justify-content: start;
-    padding: 2px;
-    height: 15px;
+    padding: 4px 3px;
+    height: 18px;
     width: 100%;
     background-color: var(--bg-color-primary);
     margin: 15px 0 10px 0;
@@ -102,8 +99,7 @@ section {
     width: 5%;
     background-color: pink;
     border-radius: 40px;
-    animation: loader 2s forwards ease;
-    transition-delay: 2s;
+    animation: loader 2s forwards ease-in;
 }
 
 .dot {
@@ -112,10 +108,10 @@ section {
     height: 10px;
     border-radius: 50%;
     background-color: #fff;
-    margin: 0 2px;
+    margin: 2px;
     position: relative;
     left: 0;
-    animation: loader-dot 2s forwards ease;
+    animation: loader-dot 1s forwards ease-in;
 }
 
 .values {
@@ -124,27 +120,28 @@ section {
     justify-content: space-between;
     font-size: 0.6rem;
     font-weight: bold;
+    color: hsl(243, 100%, 93%);
 }
 
 .tooltip-box {
-    width: 40%;
+    width: 180px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
     position: absolute;
-    top: 7%;
-    right: 22%;
+    top: 0;
+    right: 255px;
 }
 
 .tooltip {
-    padding: 3%;
+    padding: 15px;
     background-color: #fff;
     border-radius: 10px 10px 0 10px;
 }
 
 .tooltip p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #272727;
     font-weight: bold;
     display: flex;
@@ -156,6 +153,7 @@ section {
     color: #a5a2a2;
     margin-left: 10px;
     text-transform: uppercase;
+    letter-spacing: 0.1rem;
 }
 
 .tooltip-arrow {
@@ -180,5 +178,37 @@ section {
 @keyframes loader-dot {
     100% {
         left: 95%;
+    }
+}
+
+@media(min-width: 320px) and (max-width:768px) {
+    main {
+        background: url("../img/bg-mobile.svg") center bottom /cover no-repeat;
+    }
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .article-left,
+    .article-right {
+        width: 310px;
+        margin: 10px 0;
+    }
+    .tooltip-box {
+        right: 0;
+        bottom: -20px;
+        align-items: center;
+        width: 100%;
+    }
+    .tooltip {
+        border-radius: 10px;
+    }
+    .tooltip-arrow {
+        display: none;
+    }
+    @keyframes loader-dot {
+        to {
+            left: 91%;
+        }
     }
 }
